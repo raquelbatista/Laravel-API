@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 
 class UsersController extends Controller
 {
+    //GET USERS AND SUBMIT DATABASE
     public function index()
     {
         try {
@@ -38,7 +39,7 @@ class UsersController extends Controller
         }
     }
 
-
+    //INSERT USERS
     public function store(UsersRequest $request){
         try{
             $data = $request->all();
@@ -49,6 +50,7 @@ class UsersController extends Controller
         }
     }
 
+    //SHOW DETAILS USERS
     public function show($id)
     {
         try{
@@ -62,6 +64,7 @@ class UsersController extends Controller
         }
     }
 
+    //EDIT USERS
     public function update(UsersRequest $request, $id)
     {
         try{
@@ -80,6 +83,8 @@ class UsersController extends Controller
             return response()->json(['error' => 'An error occurred: ' . $e->getMessage()], 500);
         }
     }
+
+    //DELETE USERS
     public function destroy($id){
         try{
             $response = Users::find($id);
