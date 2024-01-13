@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Http;
 
 class PostsController extends Controller
 {
+    //LOAD AND SAVE DATA POSTS
     public function index()
     {
         try {
@@ -35,6 +36,7 @@ class PostsController extends Controller
         }
     }
 
+    //INSERT POSTS
     public function store(PostsRequest $request)
     {
         try{
@@ -54,6 +56,8 @@ class PostsController extends Controller
         }
     }
 
+    //DETAILS POSTS
+
     public function show($id)
     {
         try {
@@ -69,6 +73,7 @@ class PostsController extends Controller
         }
     }
 
+    //EDIT POSTS
     public function update(PostsRequest $request, $id)
     {
         try {
@@ -88,6 +93,7 @@ class PostsController extends Controller
         }
     }
 
+    //DELETE POSTS
     public function destroy($id)
     {
         try {
